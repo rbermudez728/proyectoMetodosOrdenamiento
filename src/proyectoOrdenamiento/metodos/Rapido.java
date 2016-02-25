@@ -12,6 +12,6 @@ public class Rapido extends Thread{
 	public void run() {
 		// Aquí va el codigo del algoritmo
 		
-		System.out.println("Termina el algoritmo de ordenamiento por Inserción con un tiempo de: ");
+		System.out.println("Termina el algoritmo de ordenamiento por Ordenamiento Rápido con un tiempo de: ");
 	}
 }
