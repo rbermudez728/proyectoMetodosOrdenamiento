@@ -1,4 +1,4 @@
-package proyectoOrdenamiento;
+package proyectoOrdenamiento.utiles;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -18,7 +18,7 @@ public class LectorDeDatos {
 	private List<Integer> datos;
 	private Long cantidadDatos;
 
-	LectorDeDatos(Long n) throws IOException {
+	public LectorDeDatos(Long n) throws IOException {
 		String nombre = "muestra" + n;
 		this.setCantidadDatos(n);
 		File directorio = new File("c:\\data\\csv");

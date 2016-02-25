@@ -9,6 +9,7 @@ import proyectoOrdenamiento.metodos.Insercion;
 import proyectoOrdenamiento.metodos.Mezcla;
 import proyectoOrdenamiento.metodos.Montones;
 import proyectoOrdenamiento.metodos.Rapido;
+import proyectoOrdenamiento.utiles.LectorDeDatos;
 
 public class Principal {
 	
