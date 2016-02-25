@@ -12,7 +12,7 @@ public class Principal {
 			LectorDeDatos ld = new LectorDeDatos(1l);
 			ld.generarDatos();
 			ld.leerDatos();
-			System.out.println(ld.datos.size());
+			System.out.println(ld.getDatos().size());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

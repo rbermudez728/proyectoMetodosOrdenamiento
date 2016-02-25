@@ -15,12 +15,12 @@ import java.util.StringTokenizer;
 
 public class LectorDeDatos {
 	public File archivo;
-	public List<Integer> datos;
-	public Long cantidadDatos;
+	private List<Integer> datos;
+	private Long cantidadDatos;
 
 	LectorDeDatos(Long n) throws IOException {
 		String nombre = "muestra" + n;
-		this.cantidadDatos=n;
+		this.setCantidadDatos(n);
 		File directorio = new File("c:\\data\\csv");
 		directorio.mkdirs();
 		
@@ -40,13 +40,13 @@ public class LectorDeDatos {
 			if (this.archivo.length() == 0) {
 				fw = new FileWriter(this.archivo);
 				BufferedWriter bw = new BufferedWriter(fw);
-				for (Long i = 0l; i < this.cantidadDatos; i++) {
+				for (Long i = 0l; i < this.getCantidadDatos(); i++) {
 					int val = (int) Math.floor(Math.random() * 10000 - 1);
 					System.out.println(val);
 					bw.write("" + val + ";");
 				}
 				System.out.println("Se han insertado en el archivo! "
-						+ this.cantidadDatos);
+						+ this.getCantidadDatos());
 				bw.close();
 				valor = true;
 			} else {
@@ -66,17 +66,32 @@ public class LectorDeDatos {
 			String contenidoArchivo = null;
 			FileReader fw = new FileReader(archivo);
 			BufferedReader bw = new BufferedReader(fw);
-			this.datos = new ArrayList<Integer>();
+			this.setDatos(new ArrayList<Integer>());
 
 			contenidoArchivo = bw.readLine();
 			StringTokenizer st = new StringTokenizer(contenidoArchivo, ";");
 			while (st.hasMoreTokens())
-				datos.add(Integer.parseInt(st.nextToken()));
-			//System.out.println(datos);
+				this.datos.add(Integer.parseInt(st.nextToken()));
 		} catch (FileNotFoundException e) {
-			this.datos = null;
+			this.setDatos(null);
 			e.printStackTrace();
 		}
 		return this.datos;
+	}
+
+	public Long getCantidadDatos() {
+		return cantidadDatos;
+	}
+
+	public void setCantidadDatos(Long cantidadDatos) {
+		this.cantidadDatos = cantidadDatos;
+	}
+
+	public List<Integer> getDatos() {
+		return datos;
+	}
+
+	public void setDatos(List<Integer> datos) {
+		this.datos = datos;
 	}
 }
