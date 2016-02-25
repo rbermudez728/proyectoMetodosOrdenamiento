@@ -6,15 +6,13 @@ public class Principal {
 
 	@SuppressWarnings("unused")
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
 		try {
-			LectorDeDatos ld = new LectorDeDatos(1l);
+			LectorDeDatos ld = new LectorDeDatos(2l);
 			ld.generarDatos();
 			ld.leerDatos();
 			System.out.println(ld.getDatos().size());
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
