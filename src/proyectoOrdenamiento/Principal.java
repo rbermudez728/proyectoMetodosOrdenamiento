@@ -2,13 +2,15 @@ package proyectoOrdenamiento;
 
 import java.io.IOException;
 
+import proyectoOrdenamiento.metodos.Insercion;
+
 public class Principal {
 
-	@SuppressWarnings("unused")
 	public static void main(String[] args) {
-		
+		Long n = 100l;
+//		Long n = (long) Integer.parseInt(args[0]); 		
 		try {
-			LectorDeDatos ld = new LectorDeDatos(2l);
+			LectorDeDatos ld = new LectorDeDatos(n);
 			ld.generarDatos();
 			ld.leerDatos();
 			System.out.println(ld.getDatos().size());
@@ -16,7 +18,6 @@ public class Principal {
 			e.printStackTrace();
 		}
 		
-		MetodosOrdenamiento mo = new MetodosOrdenamiento();
 	}
 
 }
