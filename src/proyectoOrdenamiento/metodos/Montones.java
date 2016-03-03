@@ -13,7 +13,6 @@ public class Montones extends Thread{
 	}
 
 	public void run() {
-		// Aquí va el codigo del algoritmo
 		 this.heapSort();
 		System.out.println("Termina el algoritmo de ordenamiento por Montones con un tiempo de: ");
 	}

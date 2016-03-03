@@ -5,24 +5,19 @@ import java.util.List;
 
 public class Rapido extends Thread {
 	private List<Integer> datos;
-
+	public QuickPosInfo info = new QuickPosInfo();
+	
+	public class QuickPosInfo {
+		public int left;
+		public int right;
+	};
+	
 	public Rapido(List<Integer> muestra) {
 		this.datos = muestra;
-
-
 	}
 
 	public void run() {
-		// Aquí va el codigo del algoritmo
-
-		/*int[] numbers = { 3, 8, 7, 5, 2, 1, 9, 6, 4 };
-		int len = 9;*/
-
-	//	System.out.println();
-//		System.out.println("QuickSort By Iterative Method");
 		this.quickSort(0, this.datos.size() - 1);
-/*		for (int i = 0; i < 9; i++)
-			System.out.println(numbers[i]);*/
 		System.out.println("Termina el algoritmo de ordenamiento por Ordenamiento Rápido con un tiempo de: ");
 	}
 
@@ -44,13 +39,6 @@ public class Rapido extends Thread {
 			}
 		}
 	}
-
-	public class QuickPosInfo {
-		public int left;
-		public int right;
-	};
-
-	public QuickPosInfo info = new QuickPosInfo();
 
 	public void quickSort(int left, int right) {
 
