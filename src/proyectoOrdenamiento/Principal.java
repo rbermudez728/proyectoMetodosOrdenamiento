@@ -14,7 +14,7 @@ import proyectoOrdenamiento.utiles.LectorDeDatos;
 public class Principal {
 	
 	public static void main(String[] args) {
-		Long n = 11l;
+		Long n = 20000000l;
 		List<Integer> datos = new ArrayList<Integer>();
 		
 		

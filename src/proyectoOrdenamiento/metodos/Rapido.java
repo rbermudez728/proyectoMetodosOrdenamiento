@@ -1,11 +1,16 @@
 package proyectoOrdenamiento.metodos;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.LinkedList;
 import java.util.List;
 
 public class Rapido extends Thread {
 	private List<Integer> datos;
 	public QuickPosInfo info = new QuickPosInfo();
+	public double startTime;
+	public double endTime;
+	public double elapsedTime;
 	
 	public class QuickPosInfo {
 		public int left;
@@ -17,11 +22,14 @@ public class Rapido extends Thread {
 	}
 
 	public void run() {
-		long startTime = System.currentTimeMillis();
-		this.quickSort(0, this.datos.size() - 1);
-		long endTime = System.currentTimeMillis();
-		long elapsedTime = startTime - endTime;
-		System.out.println("Termina el algoritmo de ordenamiento por Ordenamiento Rápido con un tiempo de: "+elapsedTime);
+		NumberFormat formatter = new DecimalFormat("0.######E0");
+		
+		this.startTime = System.currentTimeMillis();//Tiempo inicial
+		this.quickSort(0, this.datos.size() - 1);//Algoritmo
+		this.endTime = System.currentTimeMillis();//Tiempo final
+		this.elapsedTime = startTime - endTime; //Tiempo total
+		
+		System.out.println("Termina el algoritmo de ordenamiento por Ordenamiento Rápido con un tiempo de: "+formatter.format(elapsedTime));
 	}
 
 	public int partition(int left, int right) {
@@ -77,5 +85,8 @@ public class Rapido extends Thread {
 			}
 		}
 	}
+	
+	
+	
 
 }
