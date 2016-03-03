@@ -12,13 +12,13 @@ public class Conteo extends Thread {
 
 	public void run() {
 		System.out.println(this.datos);
-		countingSort(0,this.datos.size());
+		//countingSort(0,this.datos.size());
 		System.out.println(this.datos);
 		System.out.println("Termina el algoritmo de ordenamiento por Conteo con un tiempo de: ");
 	}
 	
 	
-	public void countingSort(int low, int high)
+	/*public void countingSort(int low, int high)
 	{
 	    int[] counts = new int[high - low + 1]; // this will hold all possible values, from low to high
 	    for (Integer x : datos)
@@ -30,5 +30,5 @@ public class Conteo extends Thread {
 	        Arrays.fill(this.datos.toArray(), current, current + counts[i], i + low); // fills counts[i] elements of value i + low in current
 	        current += counts[i]; // leap forward by counts[i] steps
 	    }
-	}
+	}*/
 }
