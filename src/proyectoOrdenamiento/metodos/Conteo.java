@@ -11,12 +11,8 @@ public class Conteo extends Thread {
 	}
 
 	public void run() {
-		System.out.println(this.datos);
-		//countingSort(0,this.datos.size());
-		System.out.println(this.datos);
 		System.out.println("Termina el algoritmo de ordenamiento por Conteo con un tiempo de: ");
 	}
-	
 	
 	/*public void countingSort(int low, int high)
 	{

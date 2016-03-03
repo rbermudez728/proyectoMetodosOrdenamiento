@@ -17,8 +17,11 @@ public class Rapido extends Thread {
 	}
 
 	public void run() {
+		long startTime = System.currentTimeMillis();
 		this.quickSort(0, this.datos.size() - 1);
-		System.out.println("Termina el algoritmo de ordenamiento por Ordenamiento Rápido con un tiempo de: ");
+		long endTime = System.currentTimeMillis();
+		long elapsedTime = startTime - endTime;
+		System.out.println("Termina el algoritmo de ordenamiento por Ordenamiento Rápido con un tiempo de: "+elapsedTime);
 	}
 
 	public int partition(int left, int right) {
@@ -50,7 +53,7 @@ public class Rapido extends Thread {
 		info.left = left;
 		info.right = right;
 		list.add(info);
-
+		
 		while (true) {
 			if (list.size() == 0)
 				break;
