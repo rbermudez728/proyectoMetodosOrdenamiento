@@ -11,7 +11,7 @@ public class Insercion extends Thread{
 	
 	public void run(){
 		//Aquí va el codigo del algoritmo
-		
+		System.out.println("hol MUNDO" );
 		System.out.println("Termina el algoritmo de ordenamiento por Inserción con un tiempo de: ");
 	}
 }
