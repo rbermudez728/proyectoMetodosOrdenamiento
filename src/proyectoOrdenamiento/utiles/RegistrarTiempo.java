@@ -1,9 +1,11 @@
 package proyectoOrdenamiento.utiles;
 
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 
@@ -30,11 +32,18 @@ public class RegistrarTiempo {
 		obj.put("n",n);
 		obj.put("t",t);
 		
+		/*FileReader filer = new FileReader(this.archivo);
+		
+			filer.read();
+		
+		
+		JSONArray list = file.read();*/
+		
 		try {
-			FileWriter file = new FileWriter(this.archivo);
-			file.write(obj.toJSONString());
-			file.flush();
-			file.close();
+			FileWriter filew = new FileWriter(this.archivo);
+			filew.write(obj.toJSONString());
+			filew.flush();
+			filew.close();
 
 		} catch (IOException e) {
 			System.out.println("Error manipulando JSON");

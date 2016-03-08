@@ -14,7 +14,7 @@ import proyectoOrdenamiento.utiles.LectorDeDatos;
 public class Principal {
 	
 	public static void main(String[] args) {
-		Long n = 10l;
+		Long n = 20000000l;
 		List<Integer> datos = new ArrayList<Integer>();
 				
 		System.out.println("Ejecutando el aplicativo para n="+n);
@@ -27,16 +27,16 @@ public class Principal {
 			//Creamos los métodos de ordenamiento
 			//Insercion ordenamientoInsercion = new Insercion(datos);
 			//Mezcla ordenamientoMezcla = new Mezcla(datos);
-			Montones ordenamientoMontones = new Montones(datos);
+			//Montones ordenamientoMontones = new Montones(datos);
 			//Rapido ordenamientoRapido = new Rapido(datos);
-			//Conteo ordenamientoConteo = new Conteo(datos);	
+			Conteo ordenamientoConteo = new Conteo(datos);	
 			
 			//Lanzamos los hilos
 			//ordenamientoInsercion.start();
 			//ordenamientoMezcla.start();
-			ordenamientoMontones.start();
+			//ordenamientoMontones.start();
 			//ordenamientoRapido.start();
-			//ordenamientoConteo.start();
+			ordenamientoConteo.start();
 			
 		} catch (IOException e) {
 			e.printStackTrace();

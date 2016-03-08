@@ -43,7 +43,9 @@ public class LectorDeDatos {
 				for (Long i = 0l; i < this.getCantidadDatos(); i++) {
 					int val = (int) Math.floor(Math.random() * 10000 - 1);
 					System.out.println(val);
-					bw.write("" + val + ";");
+					if(val>0){
+						bw.write("" + val + ";");
+					}
 				}
 				System.out.println("Se han insertado en el archivo! "
 						+ this.getCantidadDatos());
