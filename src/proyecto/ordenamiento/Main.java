@@ -18,7 +18,14 @@ public class Main {
 	 */
 	@SuppressWarnings("unused")
 	public static void main(String[] args) {
-		Long n = 1000000L;
+		/* hay que tomar datos para n=
+			a) 1 millón de datos
+			b) 2 millones de datos
+			c) 5 millones de datos
+			d)10 millones de datos
+			e)20 millones de datos
+		*/
+		Long n = 2000002L;
 		List<Integer> datos = new ArrayList<Integer>();
 		
 		System.out.println(Thread.currentThread().getName() + " - Main");
@@ -51,3 +58,4 @@ public class Main {
 	}
 
 }
+

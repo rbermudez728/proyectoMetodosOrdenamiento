@@ -29,17 +29,15 @@ public class Conteo extends BaseMetodoOrdenamiento {
 	private int[] conteo(int high, int low) {
 
 		// Se crea un vector de colas de 5 posiciones enteras
-		int[] counts = new int[10000 + 2]; // this will hold all possible
-											// values, from low to high
+		int[] counts = new int[10000 + 2]; // this will hold all possible 
 		int[] res = new int[super.datos.size()];
-
 		for (int x : super.datos) {
 			if (x < 0) {
 				x = x * (-1);
 			}
 			counts[x]++;
 		}
-
+		
 		int current = 0;
 		for (int i = 0; i < counts.length; i++) {
 			Arrays.fill(res, current, current + counts[i], i);// fills counts[i]
