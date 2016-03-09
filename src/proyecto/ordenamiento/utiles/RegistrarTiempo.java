@@ -1,4 +1,4 @@
-package proyectoOrdenamiento.utiles;
+package proyecto.ordenamiento.utiles;
 
 import java.io.File;
 import java.io.FileReader;

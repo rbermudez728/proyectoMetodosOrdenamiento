@@ -1,15 +1,15 @@
-package proyectoOrdenamiento;
+package proyecto.ordenamiento;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import proyectoOrdenamiento.metodos.Conteo;
-import proyectoOrdenamiento.metodos.Insercion;
-import proyectoOrdenamiento.metodos.Mezcla;
-import proyectoOrdenamiento.metodos.Montones;
-import proyectoOrdenamiento.metodos.Rapido;
-import proyectoOrdenamiento.utiles.LectorDeDatos;
+import proyecto.ordenamiento.utiles.LectorDeDatos;
+import proyecto.ordenamiento.metodo.Mezcla;
+import proyecto.ordenamiento.metodo.Montones;
+import proyecto.ordenamiento.metodo.Rapido;
+import proyecto.ordenamiento.metodo.Conteo;
+import proyecto.ordenamiento.metodo.Insercion;
 
 public class Principal {
 	
