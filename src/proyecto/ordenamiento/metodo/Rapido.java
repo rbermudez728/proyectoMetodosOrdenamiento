@@ -5,15 +5,15 @@ import java.util.List;
 import proyecto.ordenamiento.BaseMetodoOrdenamiento;
 
 public class Rapido extends BaseMetodoOrdenamiento {
-	private List<Integer> datos;
-		
+	
 	public Rapido(List<Integer> datos) {
 		super(datos);
 	}
 
+	@Override
 	public void ejecutar() {
 
-		this.quickSort(0, this.datos.size() - 1);// Algoritmo
+		this.quickSort(0, super.datos.size() - 1);// Algoritmo
 
 	}
 
@@ -21,7 +21,7 @@ public class Rapido extends BaseMetodoOrdenamiento {
 		int i = inicio;
 		int j = fin;
 		int pivote = (this.datos.get(i) + this.datos.get(j)) / 2;
-		System.out.println("Pivote-->" + pivote + " i=" + i + " j=" + j);
+		//System.out.println("Pivote-->" + pivote + " i=" + i + " j=" + j);
 		// iteramos hasta que i no sea menor que j
 		while (i < j) {
 
@@ -38,7 +38,7 @@ public class Rapido extends BaseMetodoOrdenamiento {
 			// si i es menor o igual que j significa que los índices se han
 			// cruzado
 			if (i <= j) {
-				System.out.println("intercambiando i-->" + i + " j-->" + j);
+				//System.out.println("intercambiando i-->" + i + " j-->" + j);
 				this.intercambiar(i, j);
 				i++;
 				j--;

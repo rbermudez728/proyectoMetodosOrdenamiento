@@ -28,16 +28,16 @@ public abstract class BaseMetodoOrdenamiento extends Thread {
 		long tFinal;
 		long tTotal;
 		String identificador = Thread.currentThread().getName() + " - " + this.getClass().getSimpleName();
-		System.out.println(identificador + ": Se inicial el metodo ");
-		System.out.println(identificador + ": Se va a ordenar " + this.datos);
+		//System.out.println(identificador + ": Se inicial el metodo ");
+		//System.out.println(identificador + ": Se va a ordenar " + this.datos);
 		tInicial = System.nanoTime();
 		ejecutar();
 		tFinal = System.nanoTime();
 		tTotal = tFinal - tInicial;
 		
-		System.out.println(identificador + ": Resultado ordenado va a ordenar " + this.datos);
+		//System.out.println(identificador + ": Resultado ordenado va a ordenar " + this.datos);
 		System.out.println(identificador + ": Se tardó  " + TimeUnit.NANOSECONDS.convert(tTotal, TimeUnit.NANOSECONDS));
-
+		System.out.println("---------------------------------------------------------------------");
 	}
 
 	/**

@@ -20,14 +20,10 @@ public class Conteo extends BaseMetodoOrdenamiento {
 
 	@Override
 	protected void ejecutar() {
-		int[] vordenado = new int[this.datos.size()];
+		int[] vordenado = new int[super.datos.size()];
 		vordenado = this.conteo(99999, 0);// Algoritmo
 		super.datos = IntStream.of(vordenado).boxed()
 				.collect(Collectors.toList());
-	}
-
-	public void run() {
-
 	}
 
 	private int[] conteo(int high, int low) {
@@ -35,9 +31,9 @@ public class Conteo extends BaseMetodoOrdenamiento {
 		// Se crea un vector de colas de 5 posiciones enteras
 		int[] counts = new int[10000 + 2]; // this will hold all possible
 											// values, from low to high
-		int[] res = new int[this.datos.size()];
+		int[] res = new int[super.datos.size()];
 
-		for (int x : this.datos) {
+		for (int x : super.datos) {
 			if (x < 0) {
 				x = x * (-1);
 			}

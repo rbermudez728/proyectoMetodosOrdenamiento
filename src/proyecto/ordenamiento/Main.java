@@ -4,8 +4,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import proyecto.ordenamiento.metodo.Conteo;
 import proyecto.ordenamiento.metodo.Insercion;
 import proyecto.ordenamiento.metodo.Mezcla;
+import proyecto.ordenamiento.metodo.Montones;
 import proyecto.ordenamiento.metodo.Rapido;
 import proyecto.ordenamiento.utiles.LectorDeDatos;
 
@@ -31,11 +33,15 @@ public class Main {
 			Insercion ordenamientoInsercion = new Insercion(ld.leerDatos());
 			Mezcla mezcla = new Mezcla(ld.leerDatos());
 			Rapido rapido = new Rapido(ld.leerDatos());
+			Montones montones = new Montones(ld.leerDatos());
+			Conteo conteo = new Conteo(ld.leerDatos());
 			
 			//Lanzamos los hilos
 			ordenamientoInsercion.start();
 			mezcla.start();
 			rapido.start();
+			montones.start();
+			conteo.start();
 			
 		} catch (IOException e) {
 			e.printStackTrace();
