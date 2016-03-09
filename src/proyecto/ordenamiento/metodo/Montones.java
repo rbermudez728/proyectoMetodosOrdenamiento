@@ -19,12 +19,12 @@ public class Montones extends BaseMetodoOrdenamiento{
 	private void heapSort(){
 		 PriorityQueue<Integer> heap = new PriorityQueue<Integer>(datos.size());
 		    
-		    // Add each array element to the heap
+		    // Se añade cada elemento a la estructura Heap
 		    for (Integer e : datos)
 		        heap.add(e);
 		    
-		    // Elements come off the heap in ascending order
-		    for (int i=0; i<datos.size(); i++)
+		    // Los elementos se sacan del Heap en orden ascendente
+		    for (int i=0; i<datos.size(); i++)	
 		    	datos.set(i,heap.remove());
 	}
 	
