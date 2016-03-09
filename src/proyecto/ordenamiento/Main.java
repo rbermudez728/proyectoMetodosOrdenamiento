@@ -18,7 +18,7 @@ public class Main {
 	 */
 	@SuppressWarnings("unused")
 	public static void main(String[] args) {
-		Long n = 10L;
+		Long n = 1000000L;
 		List<Integer> datos = new ArrayList<Integer>();
 		
 		System.out.println(Thread.currentThread().getName() + " - Main");

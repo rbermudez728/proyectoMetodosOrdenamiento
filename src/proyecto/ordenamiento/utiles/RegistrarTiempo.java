@@ -7,7 +7,7 @@ import java.io.IOException;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-
+import org.json.simple.parser.JSONParser;
 
 public class RegistrarTiempo {
 	public File archivo;
@@ -18,41 +18,37 @@ public class RegistrarTiempo {
 		directorio.mkdirs();
 
 		this.archivo = new File("c:\\data\\csv\\" + nombre + ".json");
-		if (this.archivo.createNewFile()) {
-			System.out.println("Empezando a registrar tiempos!!");
-		} else {
-			System.out.println("Empezando a registrar tiempos!!");
-		}
+		this.archivo.createNewFile();
 		this.agregarDato(n, t);
 	}
-	
-	@SuppressWarnings("unchecked")
-	public void agregarDato(int n, Long t){
-		JSONObject obj = new JSONObject();
-		obj.put("n",n);
-		obj.put("t",t);
-		
-		/*FileReader filer = new FileReader(this.archivo);
-		
-			filer.read();
-		
-		
-		JSONArray list = file.read();*/
-		
-		try {
-			FileWriter filew = new FileWriter(this.archivo);
-			filew.write(obj.toJSONString());
-			filew.flush();
-			filew.close();
 
-		} catch (IOException e) {
-			System.out.println("Error manipulando JSON");
+	@SuppressWarnings({ "unchecked" })
+	public void agregarDato(int n, Long t) {
+		JSONArray arreglo = new JSONArray();
+		JSONParser parser = new JSONParser();
+		JSONObject nuevoDato = new JSONObject();
+		nuevoDato.put("n", n);
+		nuevoDato.put("t", t);
+
+		try {
+			Object obj = parser.parse(new FileReader(this.archivo));
+			arreglo = (JSONArray) obj;
+		} catch (Exception ex) {
+			System.err.println("Creando el archivo json de medidas");
+		} finally {
+			arreglo.add(nuevoDato);
+			FileWriter file;
+			try {
+				file = new FileWriter(this.archivo);
+				file.write(arreglo.toJSONString());
+				file.flush();
+				file.close();
+			} catch (IOException e) {
+				System.err.println("No se pueden registrar los tiempos");
+			}
+
 		}
 
-		System.out.print(obj);
-
-		
 	}
-	
 
 }

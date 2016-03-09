@@ -1,7 +1,10 @@
 package proyecto.ordenamiento;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+
+import proyecto.ordenamiento.utiles.RegistrarTiempo;
 
 /**
  * Clase base para los metodos de ordenamiento
@@ -23,6 +26,7 @@ public abstract class BaseMetodoOrdenamiento extends Thread {
 	 * 
 	 * @see java.lang.Thread#run()
 	 */
+	@SuppressWarnings("unused")
 	public void run() {
 		long tInicial;
 		long tFinal;
@@ -38,6 +42,13 @@ public abstract class BaseMetodoOrdenamiento extends Thread {
 		//System.out.println(identificador + ": Resultado ordenado va a ordenar " + this.datos);
 		System.out.println(identificador + ": Se tardó  " + TimeUnit.NANOSECONDS.convert(tTotal, TimeUnit.NANOSECONDS));
 		System.out.println("---------------------------------------------------------------------");
+		try {
+			RegistrarTiempo rt = new RegistrarTiempo(identificador, this.datos.size(), TimeUnit.NANOSECONDS.convert(tTotal, TimeUnit.NANOSECONDS));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 	}
 
 	/**
