@@ -6,12 +6,7 @@ import proyecto.ordenamiento.BaseMetodoOrdenamiento;
 
 public class Rapido extends BaseMetodoOrdenamiento {
 	private List<Integer> datos;
-	
-	public class QuickPosInfo {
-		public int left;
-		public int right;
-	};
-
+		
 	public Rapido(List<Integer> datos) {
 		super(datos);
 	}
