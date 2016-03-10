@@ -25,7 +25,7 @@ public class Main {
 			d)10 millones de datos
 			e)20 millones de datos
 		*/
-		Long n = 2000002L;
+		Long n = 2000000L;
 		List<Integer> datos = new ArrayList<Integer>();
 		
 		System.out.println(Thread.currentThread().getName() + " - Main");
