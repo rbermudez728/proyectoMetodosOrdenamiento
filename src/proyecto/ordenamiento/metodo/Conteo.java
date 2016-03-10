@@ -2,8 +2,8 @@ package proyecto.ordenamiento.metodo;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
+//import java.util.stream.Collectors;
+//import java.util.stream.IntStream;
 
 import proyecto.ordenamiento.BaseMetodoOrdenamiento;
 
@@ -21,9 +21,11 @@ public class Conteo extends BaseMetodoOrdenamiento {
 	@Override
 	protected void ejecutar() {
 		int[] vordenado = new int[super.datos.size()];
-		vordenado = this.conteo(99999, 0);// Algoritmo
-		super.datos = IntStream.of(vordenado).boxed()
-				.collect(Collectors.toList());
+		vordenado = this.conteo(99999, 0);
+		
+		// Algoritmo
+		/*super.datos = IntStream.of(vordenado).boxed()
+				.collect(Collectors.toList());*/
 	}
 
 	private int[] conteo(int high, int low) {
